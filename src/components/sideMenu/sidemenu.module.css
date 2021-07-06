@@ -1,0 +1,658 @@
+
+@media (max-width: 991.98px) {
+    .mainSidebarShow {
+        overflow: inherit
+    }
+
+    .mainSidebarShow .mainSidebar {
+        display: flex;
+        transform: translateX(0);
+        visibility: visible;
+        transition: left .3s ease, width .3s ease
+    }
+
+    .mainSidebarShow .mainNavbarBackdrop {
+        opacity: 1
+    }
+}
+
+@media (min-width: 992px) {
+    .mainSidebarHide .mainSidebar {
+        display: none
+    }
+
+    .mainSidebarHide .mainSidebarSticky + .mainContent {
+        margin-left: 0
+    }
+}
+
+.mainSidebar {
+    width: 240px;
+    flex-direction: column;
+    flex-shrink: 0;
+    border-right: 0;
+    transform: translateX(240px);
+    visibility: hidden;
+    transition: all .4s
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mainSidebar {
+        transition: none
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .mainSidebar {
+        width: 220px
+    }
+}
+
+@media (max-width: 991.98px) {
+    .mainSidebar {
+        position: fixed;
+        top: 53px !important;
+        left: 0;
+        bottom: 0;
+        z-index: 999;
+        background-color: #fff
+    }
+    .chartjsRenderMonitor {
+        width: 100% !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .mainSidebar {
+        position: relative;
+        display: flex;
+        transform: none;
+        z-index: 999;
+        border-right-width: 1px;
+        visibility: visible
+    }
+}
+
+.mainSidebarSticky {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: none
+}
+
+.mainSidebarBody .nav-item.active .nav-link:before {
+    content: "";
+    position: absolute;
+    top: -30px;
+    z-index: 9;
+    left: 0;
+    bottom: 0;
+    height: 30px;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom: transparent;
+    border-radius: 0 0 0 48px
+}
+
+.mainSidebarBody .nav-item.active .nav-link:after {
+    content: "";
+    position: absolute;
+    top: 43px;
+    z-index: 0;
+    left: 0;
+    bottom: 0;
+    height: 30px;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom: transparent;
+    border-radius: 48px 0 0 0
+}
+
+.mainSidebarBody .nav-item.active .nav-link .shape1 {
+    position: absolute;
+    top: -30px;
+    width: 20px;
+    height: 60px;
+    left: 0
+}
+
+.mainSidebarBody .nav-item.active .nav-link .shape2 {
+    position: absolute;
+    top: 35px;
+    width: 20px;
+    height: 30px;
+    left: 0
+}
+
+.optionDots {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: transparent;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 40px;
+    display: block
+}
+
+.mainSidebarBody li.nav-item.active .nav-link {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    border-radius: 0 30px 30px 0;
+    margin: 10px 0 10px auto;
+    border: 0 solid transparent;
+    border-left: 0;
+    width: inherit
+}
+
+@media (min-width: 992px) {
+    .mainSidebarSticky + .mainContent {
+        margin-left: 220px
+    }
+}
+
+@media (min-width: 1200px) {
+    .mainSidebarSticky + .mainContent {
+        margin-left: 240px
+    }
+}
+
+.mainSidebarHeader {
+    flex-shrink: 0;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px
+}
+
+.mainSidebarLoggedin {
+    padding: 10px 20px;
+    display: flex;
+    flex-shrink: 0
+}
+
+.mainSidebarLoggedin .mainImgUser {
+    width: 36px;
+    height: 36px
+}
+
+.mainSidebarLoggedin .mediaBody {
+    margin-left: 12px
+}
+
+.mainSidebarLoggedin .mediaBody h6 {
+    font-weight: 700;
+    font-size: 14px;
+    color: #8f9cc0;
+    margin-bottom: 2px
+}
+
+.mainSidebarLoggedin .mediaBody span {
+    display: block;
+    color: #a8afc7
+}
+
+.mainSidebarBody {
+    padding: 0
+}
+
+@media (min-width: 1200px) {
+    .mainSidebarBody {
+        padding: 12px 0
+    }
+}
+
+.mainBody .mainSidebarBody .nav {
+    flex-direction: column;
+    padding: 0 15px 0 0;
+    justify-content: center;
+    margin: 0 auto
+}
+
+.navHeader {
+    margin: 0 15px 0 0;
+    display: flex;
+    position: relative
+}
+
+.mainSidebarBody .navLabel {
+    color: hsla(0, 0%, 100%, .3);
+    padding: 0 0 10px
+}
+
+.mainSidebarBody .navLabel, .second-sidemenu .navLabel {
+    text-transform: uppercase;
+    font-size: 11.49px;
+    font-weight: 500;
+    letter-spacing: .5px
+}
+
+
+
+
+.mainSidebarBody .subTxt {
+    font-size: 10.9px;
+    padding: 0;
+    color: #9b9ca3;
+    margin-bottom: 0;
+    position: absolute;
+    margin-top: -1px
+}
+
+.second-sidemenu .subTxt {
+    font-size: 10.9px;
+    padding: 0;
+    color: #8d95b1;
+    margin-bottom: 10px
+}
+
+.mainSidebarBody .nav-item {
+    position: relative;
+    display: block
+}
+
+.mainSidebarBody .nav-item + .nav-item {
+    margin-top: -1px
+}
+
+.mainSidebarBody .nav-link {
+    height: 43px;
+    display: flex;
+    align-items: center;
+    padding: 0 4px 0 9px;
+    font-weight: 400;
+    font-size: 14px;
+    color: hsla(0, 0%, 100%, .4)
+}
+
+.mainSidebarBody .nav-link .sidemenuIcon {
+    font-size: 17px;
+    line-height: 0;
+    margin-left: 10px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 50%
+}
+
+.mainSidebarBody .nav-link i.typcn {
+    line-height: .9
+}
+
+.mainSidebarBody .nav-link i.typcn:before {
+    width: auto
+}
+
+.mainSidebarBody .nav-link.with-sub {
+    position: relative
+}
+
+.mainSidebarBody .nav-sub {
+    list-style: none;
+    padding: 0;
+    margin-right: 1.2rem
+}
+
+.mainSidebarBody .nav-sub .nav-sub-link:before {
+    content: "\E046";
+    font-family: typicons;
+    font-style: normal;
+    font-weight: 400;
+    text-decoration: inherit;
+    top: 8px;
+    font-size: 12px;
+    opacity: .4;
+    margin-left: 22px;
+    color: hsla(0, 0%, 100%, .8)
+}
+
+.mainSidebarBody .nav-sub-item .nav-sub {
+    padding: 0 0 0 12px;
+    border-left-width: 1px;
+    margin-left: 0
+}
+
+.mainSidebarBody .nav-sub-item .nav-sub .nav-sub-link {
+    height: auto;
+    padding: 7px 0
+}
+
+.mainSidebarBody .nav-sub-item.active > .nav-sub-link {
+    color: #c6c6e0
+}
+
+.mainSidebarBody .nav-sub-item.show .nav-sub {
+    display: block
+}
+
+.mainSidebarBody .nav-sub-link {
+    height: 38px;
+    display: flex;
+    align-items: center;
+    color: hsla(0, 0%, 100%, .4);
+    font-size: 13px
+}
+
+.mainSidebarBody .nav-sub-link.with-sub {
+    justify-content: space-between
+}
+
+.mainSidebarBody .nav-sub-link.with-sub:after {
+    content: "\F3D0";
+    font-family: Ionicons;
+    font-size: 12px;
+    font-weight: 400;
+    display: inline-block;
+    position: relative;
+    margin-left: auto;
+    color: #f0f0ff
+}
+
+.mainSidebarBody .nav-sub-link + .nav-sub-link {
+    border-top: 1px dotted #f0f0ff
+}
+
+.mainSidebarBody li.active .sidemenuIcon {
+    font-size: 18px;
+    line-height: 0;
+    margin-left: 10px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    color: #fff
+}
+
+@media (min-width: 992px) {
+    .mainSidebarBody .nav-sub-link.with-sub:after {
+        margin-left: 4px;
+        font-size: 12px
+    }
+}
+
+@media (min-width: 768px) {
+    .mainSidebarHide .mainSidebarBody li.active:after {
+        top: 43px
+    }
+
+    .mainSidebarHide .mainSidebar .mainSidebarBody {
+        padding: 17px 0 12px
+    }
+
+    .mainSidebarHide .mainSidebarBody .nav-link .sidemenuIcon {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        border-radius: 50%;
+        z-index: 1;
+        box-shadow: none
+    }
+
+    .mainSidebarHide.mainSidebar-open .mainSidebarBody li.active {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        border-radius: 30px 0 0 30px;
+        margin: 0 0 0 auto;
+        border: 0 solid transparent;
+        border-right: 0;
+        transition: none
+    }
+
+    .mainSidebarHide.mainSidebar-open .mainSidebarBody .nav-link .sidemenuIcon {
+        font-size: 18px;
+        line-height: 0;
+        margin-right: 10px;
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        border-radius: 50%;
+        box-shadow: none
+    }
+
+    .mainSidebarHide.mainSidebar-open .mainSidebarBody li.active .sidemenuIcon {
+        font-size: 18px;
+        line-height: 0;
+        margin-right: 10px;
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        background: #6259ca;
+        text-align: center;
+        border-radius: 50%;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+        color: #fff
+    }
+
+    .mainBody.mainSidebarHide.mainSidebar-open .mainSidebarBody .nav {
+        flex-direction: column;
+        padding: 0 15px 0 0;
+        text-align: inherit;
+        margin: 0;
+        justify-content: inherit
+    }
+
+    .mainSidebarHide .mainSidebarBody li.active {
+        margin: 6px 0
+    }
+
+    .mainSidebarHide .mainSidebarBody li.active .sidemenuIcon {
+        background: #6259ca;
+        margin-right: 5px
+    }
+
+    .mainSidebarHide .mainSidebarBody li.nav-item.active .nav-link {
+        width: inherit;
+        transition: margin-right .3s ease
+    }
+
+    .mainSidebarHide.mainSidebar-open .mainSidebarBody .nav-item.active .nav-link:before {
+        content: "";
+        position: absolute;
+        top: -30px;
+        z-index: 9;
+        left: 0;
+        bottom: 0;
+        height: 30px;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom: transparent;
+        border-radius: 0 0 0 48px
+    }
+
+    .mainSidebarHide.mainSidebar-open .mainSidebarBody .nav-item.active .nav-link:after {
+        content: "";
+        position: absolute;
+        top: 43px;
+        z-index: 0;
+        left: 0;
+        bottom: 0;
+        height: 30px;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom: transparent;
+        border-radius: 48px 0 0 0
+    }
+}
+
+.mainSidebarBody .nav-sub .nav-sub-link:before, ::-ms-backdrop {
+    top: 0
+}
+
+@media (min-width: 992px) {
+    .horTopHeader .mainLogo {
+        position: inherit
+    }
+
+    .horTopHeader .headerBrandImg.desktopLogo {
+        position: absolute;
+        margin: 0 auto;
+        left: 0;
+        right: 0
+    }
+}
+@media (max-width: 991px) {
+    .horizontalmenu .headerBrandImg.desktop-logo {
+        display: none
+    }
+    .mainLogo .headerBrandImg {
+        margin-left: 10px
+    }
+}
+@media (max-width: 599px) {
+    .horizontalmenu.darkTheme .mainHeaderLeft .headerbrandImg.desktopLogo.themeLogo {
+        display: none !important
+    }
+}
+
+@media (max-width: 575.98px) {
+    .mainLogo .headerBrandImg.desktopLogo {
+        display: none
+    }
+    
+    .mainLogo .headerBrandImg.iconLogo {
+        display: block
+    }
+
+}
+
+.headerBrandImg.iconLogo {
+    display: none
+}
+
+.headerBrandImg {
+    line-height: 2.5rem;
+    vertical-align: middle;
+    width: auto
+}
+
+@media (max-width: 767px) {
+    .colorHeader .horHeader.topHeader .headerBrandImg.desktopLogo.themeLogo {
+        display: none !important
+    }
+}
+
+.themeLogos {
+    display: none
+}
+
+.themeLogo {
+    display: none !important
+}
+
+/* sideMenu style */
+
+.mainContent.sideContent{transition:margin-right .3s ease}
+.sidemenuLabel{transition:margin-right .45s ease}
+.sideMenu .nav-link:hover{color:#fff}
+.sideMenu .nav-link:hover .sidemenuLabel{margin-right:5px;transition:margin-right .45s ease}
+.sideMenu .nav-item{transition-duration:.25s;margin:6px 0}
+.sideMenu .nav-sub{max-height:0;overflow:hidden;transition:all .9s}
+.sideMenu .nav-item.show>.nav-sub{max-height:100vh;transition:all 2s}
+.sideMenu .nav-sub-link{transition:all .25s}
+.iconbtn{display:none}
+.sideMenu i.angle{transform-origin:center;position:absolute;top:15px;left:20px;font-size:12px}
+.sideMenu .nav-item.show i.angle{transform:rotate(90deg);position:absolute;top:15px;left:20px;font-size:12px}
+.mainSidebarOpen.mainSidebarHide .sideBadge,.sideBadge{position:absolute;top:12px;left:18px;border-radius:50px}
+.mainSidebarHide .sideBadge{position:absolute;top:0;left:27px;border-radius:50px;z-index:4}
+.sidemenuLogo{padding:13.4px 21px;border-bottom:1px solid rgba(240,240,255,.1);justify-content:center}
+.sideMenu .headerBrandImg{margin-top:0!important;outline:0}
+.sidemenuHeight{min-height:88.3vh}
+.mainFooter{transition:margin-right .3s ease}
+@media (min-width:1200px){
+    .sideContent{margin-right:240px}
+}
+@media (min-width:992px){
+    .sideHeader .mainLogo{
+        color:inherit;
+        margin-left:0;
+        font-size:1.25rem;
+        white-space:nowrap;
+        font-weight:600;
+        padding:0;
+        transition:opacity .3s;line-height:2.9rem;
+        text-align:center
+    }.mainSidebarHide .mainFooter,.mainSidebarHide .sideHeader{padding-right:70px}
+    .mainBody .sideHeader{position:fixed;width:100%;z-index:10!important;border-bottom:1px solid #e1e6f1;box-shadow:-7.829px 11.607px 20px 0 rgba(144,143,160,.09);right:0;padding-right:240px
+    }
+    .mainBody.mainSidebarHide .sideHeader{padding-right:75px}
+    .mainSidebarHide .sidemenuLogo{padding:8px 6px 6px;border-bottom:1px solid rgba(240,240,255,.1);justify-content:center;height:65px}
+    .mainSidebarHide.mainSidebarOpen .sidemenuLogo{padding:13.4px;border-bottom:1px solid rgba(240,240,255,.1);justify-content:center}
+    .mainContent.sideContent{margin-right:240px}.mainSidebar.sideMenu{width:240px}
+    .mainFooter{margin-right:0}
+}
+@media (max-width:992px) and (min-width:767px){
+    .mainHeaderMenuIcon{margin-right:15px}
+}@media (max-width:767px){
+    .mainHeaderMenuIcon{margin-right:15px}
+    .sideHeader .iconLogo{margin-right:0}
+    .mainSidebar-show .sideMenu{top:60px!important}
+}@media (min-width:768px){
+    .mainSidebarHide .sideMenu{right:0;width:80px;display:block;transform:translateX(0);visibility:visible}
+    .mainSidebarHide .mainContent.sideContent{margin-right:80px}
+    .mainSidebarHide .mainSidebarBody .sub-txt,.mainSidebarHide .nav-label{display:none}
+    .mainSidebarBody .nav-label-1{height:28px;display:block;text-transform:uppercase;font-size:14px;font-weight:500;letter-spacing:.5px;color:#fff;padding:0;background:rgba(7,167,187,.24);width:28px;border-radius:50%;text-align:center;margin:3px 11px;line-height:2.1}
+    .mainSidebarHide .navHeader{margin:0}
+    .mainSidebarHide.mainSidebarOpen .navHeader{margin:0 15px 0 0}
+    .mainSidebarHide .sidemenuLabel{display:none;font-size:10px}
+    .mainSidebarHide .nav-item{width:100%}
+    .mainSidebarHide .text-icon{display:none}
+    .mainSidebarHide .iconbtn{display:block}
+    .mainSidebarHide .mainSidebarBody i.angle{display:none}
+    .mainSidebarHide .sideMenu .nav-link{padding:10px 0;text-align:center;margin:0 auto}
+    .mainSidebarHide .mainSidebarBody .nav-item,.mainSidebarHide .mainSidebarBody .nav-item+.nav-item{text-align:center;margin:6px 5px}
+    .mainSidebarHide .sideMenu .mainLogo .desktopLogo{display:none}
+    .mainSidebarHide .sideMenu .mainLogo .iconLogo{display:block;margin:0 auto;text-align:center}
+    .mainSidebarHide .sideMenu .headerBrandImg{margin-top:0!important}
+    .mainSidebarHide .mainSidebarBody .nav-item.show>.nav-sub{display:none}
+    .mainSidebarHide .mainFooter{margin-right:0}
+    .mainSidebarHide .sideMenu .mainSidebarBody .nav-link i{font-size:20px}
+    .mainSidebarHide .sideMenu i.angle{font-size:12px!important}
+    .mainSidebarOpen .sideMenu{right:0;width:240px}
+    .mainSidebarOpen .mainSidebarBody .sub-txt,.mainSidebarOpen .nav-label{display:block}
+    .mainSidebarOpen .mainSidebarBody .nav-label{text-transform:uppercase;font-size:11.49px;font-weight:500;letter-spacing:.5px;color:hsla(0,0%,100%,.3);padding:10px 0 0}
+    .mainSidebarOpen .mainSidebarBody .sub-txt{font-size:10.9px;padding:0;color:hsla(0,0%,100%,.6);margin-bottom:0}
+    .mainSidebarOpen .sidemenuLabel,.mainSidebarOpen .text-icon{display:block}.mainSidebarOpen .iconbtn{display:none}
+    .mainSidebarOpen .mainSidebarBody i.angle{display:block}
+    .mainSidebarOpen .sideMenu .nav-link{display:flex}
+    .mainSidebarOpen .mainSidebarBody .sideMenu .nav-link{margin-right:10px}
+    .mainSidebarOpen .sideMenu .nav-link{margin-bottom:0}
+    .mainSidebarOpen .sidemenuLabel{font-size:14px}
+    .mainSidebarOpen .sideMenu .mainLogo .desktopLogo{display:block;margin:0 auto;text-align:center}
+    .mainSidebarOpen .sideMenu .mainLogo .iconLogo{display:none}
+    .mainSidebarOpen .mainSidebarBody .nav-item.show>.nav-sub{display:block}
+    .mainSidebarOpen .sideMenu .nav-item.show i.angle{transform:rotate(90deg);position:absolute;top:16px;left:20px}
+    .mainSidebarOpen .sideMenu .mainSidebarBody .nav-link i{margin-left:5px;font-size:18px}
+    .mainSidebarOpen .sideMenu i.angle{font-size:12px}}
+    .sideHeader,::-ms-backdrop{position:relative!important}
+    .mainHeader .select2-container .select2-selection--single .select2-selection__rEndered{display:block;padding-right:20px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .mainSidebar .nav-sub-item.active .nav-sub-link{color:#fff!important}
+    @media (min-width:768px){
+        .color-leftmenu.mainSidebarHide .sideMenu .mainLogo .desktopLogo{display:none!important}
+        .color-leftmenu.mainSidebarHide .sideMenu .mainLogo .iconLogo{display:block!important;margin:0 auto;text-align:center}
+        .color-leftmenu.leftmenu.mainSidebarHide.mainSidebarOpen .headerBrandImg.iconLogo,.color-leftmenu.mainSidebarHide .headerBrandImg.desktopLogo.themeLogo,.color-leftmenu.mainSidebarHide .headerBrandImg iconLogo themeLogo,.leftmenu.color-leftmenu.mainSidebarHide .headerBrandImg.iconLogo.themeLogo{display:none!important}
+        .color-leftmenu.leftmenu.mainSidebarHide.mainSidebarOpen .headerBrandImg.iconLogo.themeLogo{display:block!important;display:none!important}
+        .color-leftmenu.mainSidebarHide.mainSidebarOpen .sideMenu .mainLogo .desktopLogo{display:block!important}
+        .color-leftmenu.mainSidebarHide.mainSidebarOpen .mainLogo .headerBrandImg.desktopLogo.themeLogo,.light-leftmenu.leftmenu .headerBrandImg.desktopLogo{display:none!important}
+        .light-leftmenu.leftmenu .headerBrandImg.desktopLogo.themeLogo{display:block!important}.leftmenu.light-leftmenu.mainSidebarHide .headerBrandImg.desktopLogo,.leftmenu.light-leftmenu.mainSidebarHide .headerBrandImg.desktopLogo.themeLogo,.leftmenu.light-leftmenu.mainSidebarHide .headerBrandImg.iconLogo{display:none!important}
+        .leftmenu.light-leftmenu.mainSidebarHide.dark-theme .headerBrandImg.iconLogo.themeLogo,.leftmenu.light-leftmenu.mainSidebarHide .headerBrandImg.iconLogo.themeLogo{display:block!important}
+        .leftmenu.light-leftmenu.mainSidebarHide.dark-theme .headerBrandImg.desktopLogo.themeLogo{display:none!important}
+        .light-leftmenu.leftmenu.mainSidebarOpen .headerBrandImg.desktopLogo.themeLogo{display:block!important}
+        .leftmenu.light-leftmenu.mainSidebarHide.mainSidebarOpen .headerBrandImg.iconLogo.themeLogo{display:none!important}
+        .leftmenu.light-leftmenu.mainSidebarHide.mainSidebarOpen .mainSidebarBody .nav-label{color:#c8c4db}
+        .leftmenu.light-leftmenu.mainSidebarHide.mainSidebarOpen .mainSidebarBody .sub-txt{color:#a2a2b9}
+        .leftmenu.light-leftmenu.mainSidebarHide .sidemenuLogo{border-bottom:1px solid #f0f0ff}
+    }
+    .mainSidebarSticky{background:#25233c}
+    .mainSidebarBody li.nav-item.active .nav-link{background-color:#eaedf7}
+    .mainSidebarBody .nav-item.active .nav-link:after,.mainSidebarBody .nav-item.active .nav-link:before{border-left:20px solid #25233c}
+    .mainSidebarBody .nav-item.active .nav-link .shape1,.mainSidebarBody .nav-item.active .nav-link .shape2{background:#eaedf7}
+    .mainSidebar{transition:right .4s ease,width .4s ease}
+

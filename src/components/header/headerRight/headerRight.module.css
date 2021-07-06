@@ -1,0 +1,127 @@
+
+@media (max-width: 1024px) and (min-width: 768px) {
+    .mainHeaderRight {
+        margin-right: 15px
+    }
+}
+.mainHeaderRight, .mainHeaderRight .btnSocial{
+    display: flex;
+    align-items: center
+}
+
+.mainHeaderRight .btnSocial {
+    padding: 0;
+    justify-content: center;
+    color: #a8afc7;
+    border-radius: 3px;
+    transition: all .2s ease-in-out
+}
+
+.mainHeaderRight .btnSocial:focus, .mainHeaderRight .btnSocial:hover {
+    color: #3c4858
+}
+
+.mainHeaderRight .btnSocial i {
+    font-size: 18px;
+    line-height: 0
+}
+
+.mainHeaderRight .btnSocial + .btnSocial {
+    margin-left: 10px
+}
+
+.mainHeaderRight .btnBuy {
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: .5px;
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+    transition: all .2s ease-in-out;
+    margin-left: 20px
+}
+
+
+
+@media (prefers-reduced-motion: reduce) {
+    .mainHeaderRight .btnSocial {
+        transition: none
+    }
+}
+
+
+.mainHeaderMenuIcon{
+    margin-right: 10px;
+    width: 20px;
+    height: 30px;
+    display: flex;
+    align-items: center
+}
+@media (max-width: 991.98px) {
+    .mainHeaderMenuIcon {
+        display: none
+    }
+}
+
+
+.mainHeaderMenuIcon span {
+    display: block;
+    position: relative;
+    width: 15px;
+    height: 2px;
+    background-color: #2f395f;
+    border-radius: 3px;
+    transition: all .2s ease-in-out
+}
+
+.mainHeaderMenuIcon span:after, .mainHeaderMenuIcon span:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 2px;
+    background-color: #2f395f;
+    border-radius: 3px;
+    transition: all .2s ease-in-out
+}
+
+.mainHeaderMenuIcon span:before {
+    top: -6px
+}
+
+.mainHeaderMenuIcon span:after {
+    bottom: -6px
+}
+
+@media (min-width: 992px) {
+    .mainHeaderMenuIcon {
+        margin-left: 25px
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mainHeaderMenuIcon span, .mainHeaderMenuIcon span:after, .mainHeaderMenuIcon span:before {
+        transition: none
+    }
+}
+
+
+@media (max-width: 991.98px) {
+    .mainContentBodyShow .mainHeader .mainHeaderMenuIcon {
+        display: none
+    }
+
+    .mainContentBodyShow .mainHeader .mainHeaderLeft .mainHeaderArrow {
+        display: block
+    }
+
+    .mainContentBodyShow .mainContentLeft {
+        display: none
+    }
+
+    .mainContentBodyShow .mainContentBody {
+        display: block
+    }
+}

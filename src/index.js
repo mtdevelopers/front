@@ -1,12 +1,39 @@
+import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import uiReducer from "./redux/reducer/uiReducer";
+import { createStore, combineReducers, compose,applyMiddleware } from "redux";
+import thunk from 'redux-thunk';
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+//middleWare
+const logger = (store) => {
+  return next => {
+    return (action) => {
+      console.log('middleware',action);
+      next(action);
+    }
+  }
+};
+
+//combining REDUCERS
+const rootReducer = combineReducers({
+  
+  ui:uiReducer
+});
+
+//CREATE STORE
+const store = createStore(rootReducer,composeEnhancers(applyMiddleware(logger,thunk)));
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

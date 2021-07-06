@@ -1,0 +1,264 @@
+.mainHeaderCenter {
+    flex: 1;
+    margin: 0 0 0 .8rem;
+    position: relative
+}
+
+.inputGroup {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%
+}
+
+.main-header-center {
+    flex: 1;
+    margin: 0 0 0 .8rem;
+    position: relative
+}
+
+.mainHeaderCenter .searchPanel .dropdownToggle {
+    border-radius: 6px 0 0 6px;
+    background: #eaebfa;
+    border: 1px solid #e6eaff;
+    height: 40px;
+    color: #828aa5
+}
+
+.mainHeaderCenter .searchPanel .btn:hover .dropdownToggle {
+    color: #828aa5
+}
+
+.mainHeaderCenter .searchPanel .dropdownMenu.show {
+    display: block;
+    box-shadow: 0 8px 16px 0 rgba(162, 169, 204, .24)
+}
+
+
+
+.dropdownMenu .mainHeaderCenter .searchBtn {
+    padding: .375rem .85rem .4rem .7rem;
+    border-radius: 6px 0 0 6px;
+    color: #fff;
+    display: inline-block
+}
+
+.mainHeaderCenter .searchBtn {
+    padding: .375rem .85rem .4rem .7rem;
+    border-radius: 6px 0 0 6px;
+    color: #fff;
+    background-color: #6259ca;
+}
+
+.mainHeaderCenter .searchBtn:focus .iconStyle, .mainHeaderCenter .searchBtn:hover .iconStyle {
+    color: #fff
+}
+
+.mainHeaderCenter .searchBtn:focus, .mainHeaderCenter .searchBtn:hover {
+    background-color: #4140a9
+}
+.colorPink{
+    color: #4140a9
+}
+.mainHeaderCenter .searchBtn{
+    border-radius: 6px 0 0 6px !important
+}
+
+.mainHeaderCenter .formControl::focus {
+    background: #f6f4ff !important;
+    border: 1px solid #e6eaff
+}
+
+.mainHeaderCenter .select2-container--default .select2-selection--single {
+    border-radius: 6px 0 0 6px;
+    height: 40px;
+    width: 150px
+}
+
+.mainHeaderCenter .formControl {
+    transition: none;
+    height: 40px;
+    border-radius: 0;
+    width: auto;
+    flex: inherit
+}
+
+.mainHeaderCenter .formControl:focus {
+    background-color: #eaebfa;
+    border-color: #e0e1fb;
+    box-shadow: none !important
+}
+
+.mainHeaderCenter .formControl:focus + .btn, .mainHeaderCenter .spContainer .formControl:focus + button {
+    color: #a8afc7
+}
+
+@media (min-width: 992px) and (max-width: 1172px) {
+    .mainHeaderCenter .formControl {
+        width: 125px !important
+    }
+}
+
+@media (min-width: 1173px) {
+    .mainHeaderCenter .formControl {
+        width: 280px !important
+    }
+}
+
+.spContainer .mainHeaderCenter .formControl:focus + button {
+    color: #a8afc7
+}
+
+.mainHeaderCenter .btn:focus, .mainHeaderCenter .btn:hover, .mainHeaderCenter .spContainer button:focus, .mainHeaderCenter .spContainer button:hover, .spContainer .mainHeaderCenter button:focus, .spContainer .mainHeaderCenter button:hover {
+    color: #fff
+}
+
+.mainHeaderCenter .btn:focus i, .mainHeaderCenter .spContainer button:focus i, .spContainer .mainHeaderCenter button:focus i, .spContainer .mainHeaderCenter button:hover i {
+    color: #b1bad6
+}
+
+@media (min-width: 991px) {
+    .responsiveLogo {
+        display: none
+    }
+}
+
+@media (max-width: 991px) {
+    .responsiveLogo {
+        display: block
+    }
+}
+
+
+
+.btn{
+    position: relative;
+    top: -1px;
+    line-height: 1.538;
+    padding: 7px 20px;
+    border-radius: 4px;
+    transition: none;
+    min-height: 38px
+}
+
+.btn:active, .btn:focus{
+    box-shadow: none
+}
+.inputGroupBtn {
+    border-radius: 6px 0 0 6px !important
+}
+@media (max-width:991px) {
+    
+    .mainHeaderCenter .inputGroup {
+        display: none
+    }
+
+}
+
+.inputGroup .inputGroupBtn {
+    border-radius: 0 6px 6px 0 !important
+}
+
+.formControl{
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #a8afc7;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #e8e8f7;
+    border-radius: 3px;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    margin-left: 0;
+}
+
+.formControl::-ms-expand {
+    background-color: transparent;
+    border: 0
+}
+
+.formControl:focus {
+    color: #8f9cc0;
+    outline: 0;
+    box-shadow: 0 0 0 .2rem rgba(135, 96, 251, .25)
+}
+
+.formControl::-moz-placeholder {
+    color: #a8afc7;
+    opacity: 1
+}
+
+.formControl:-ms-input-placeholder {
+    color: #a8afc7;
+    opacity: 1
+}
+
+.formControl::placeholder {
+    color: #a8afc7;
+    opacity: 1
+}
+
+.formControl:disabled, .formControl[readonly] {
+    background-color: #f6f6ff;
+    opacity: 1
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .formControl {
+        transition: none
+    }
+}
+
+select.formControl:focus::-ms-value {
+    color: #8f9cc0;
+    background-color: #fff
+}
+
+.dropdown, .dropleft, .dropright, .dropup {
+    position: relative
+}
+
+.dropdownToggle {
+    white-space: nowrap
+}
+
+.dropdownToggle:empty:after {
+    margin-left: 0
+}
+
+.dropdownMenu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 1000;
+    display: none;
+    float: right;
+    min-width: 10rem;
+    padding: .5rem 0;
+    margin: .125rem 0 0;
+    font-size: .875rem;
+    color: #8f9cc0;
+    text-align: right;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #fff;
+    border-radius: 0;
+    box-shadow: -8px 12px 18px 0 rgba(21, 21, 62, .3)
+}
+
+.dropdownMenuLeft {
+    right: auto;
+    left: 0
+}
+
+.dropdownMenuRight {
+    right: 0;
+    left: auto
+}
+

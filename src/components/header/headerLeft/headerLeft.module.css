@@ -1,0 +1,524 @@
+.mainHeaderRight, .mainHeaderRight .btnSocial{
+    display: flex;
+    align-items: center
+}
+
+@media (min-width: 992px) {
+    .dropdownMenuLgLeft {
+        right: auto;
+        left: 0
+    }
+
+    .dropdownMenuLgRight {
+        right: 0;
+        left: auto
+    }
+
+    .headerSearch {
+        display: none
+    }
+}
+
+@media (max-width: 767px) {
+    .headerSearch .dropdown {
+        position: static !important
+    }
+    
+    .headerSearch .dropdownMenu {
+        position: absolute !important;
+        left: -1px !important;
+        right: -1px !important;
+        width: 100% !important;
+        top: 100% !important
+    }
+}
+
+.dropdownMenu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 1000;
+    display: block;
+    float: right;
+    min-width: 10rem;
+    padding: .5rem 0;
+    margin: .125rem 0 0;
+    font-size: .875rem;
+    color: #8f9cc0;
+    text-align: right;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #fff;
+    border-radius: 0;
+    box-shadow: -8px 12px 18px 0 rgba(21, 21, 62, .3)
+}
+
+
+.badge {
+    font-weight: 500;
+    padding: 4px 6px 5px
+}
+
+.badgePillar {
+    padding-right: .6em;
+    padding-left: .6em;
+    border-radius: 10rem
+}
+
+.badge {
+    display: inline-block;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 3px;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
+}
+.badgePrimary{
+    background-color: #6259ca;
+    color:#fff;
+}
+.mr3{
+    margin-right: 1rem;
+}
+.headerSearch.show .dropdownMenu {
+    display: block;
+    margin: 0
+}
+
+.dropdownMenu.show {
+    display: block
+}
+
+.dropdownMenu {
+    padding: 0;
+    border-width: 1px;
+    border-radius: 4px
+}
+
+
+.dropdownMenu .mainFormSearch {
+    flex: 1;
+    width: 100%;
+    position: relative
+}
+
+/* .dropdownMenu .mainHeaderCenter .select2-container--default .select2-selection--single {
+    border-radius: 6px 0 0 6px;
+    background: #eaebfa;
+    height: 40px;
+    width: 200px !important
+} */
+
+.headerIcons {
+    height: 20px;
+    width: 20px;
+    line-height: 20px
+}
+
+.p2 {
+    padding: .5rem !important
+}
+
+.iconNavLink {
+    font-size: 20px;
+    color: #4a4d51;
+    cursor: pointer;
+    line-height: .9;
+    padding: .6rem;
+    border-radius: 50%;
+    margin: 0 5px
+}
+
+.navLinkBadgeMain {
+    position: absolute;
+    top: 3px;
+    right: 4px;
+    padding: .2rem;
+    min-width: 1rem;
+    font-size: 9px;
+    border-radius: 50%;
+}
+
+
+.badgeDanger {
+    color: #fff !important;
+    background-color: #fd6074
+}
+
+a.badgeDanger:hover {
+    color: #fff !important;
+    background-color: #f53729
+}
+
+a.badgeDanger:focus {
+    color: #fff;
+    background-color: #f53729
+}
+
+a.badgeDanger.focus, a.badgeDanger:focus {
+    outline: 0;
+    box-shadow: 0 0 0 .2rem rgba(220, 53, 69, .5)
+}
+
+.dropdownMenu .mainHeaderCenter .searchBtn {
+    padding: .375rem .85rem .4rem .7rem;
+    border-radius: 0 6px 6px 0;
+    color: #fff;
+    display: inline-block
+}
+
+
+.dropdownMenu .mainFormSearch .btn, .dropdownMenu .mainFormSearch .spContainer button, .dropdownMenu .spContainer .mainFormSearch button {
+    display: inline-block;
+    position: static;
+    padding: .375rem .85rem .4rem .7rem;
+    border-radius: 0 6px 6px 0;
+    color: #fff
+}
+
+.mainFormSearch {
+    flex: 1;
+    width: 300px;
+    position: relative
+}
+
+.mainFormSearch .formControl {
+    border-color: #f0f2f8;
+    border-width: 1px;
+    background-color: #fff;
+    transition: none;
+    height: 40px;
+    padding-left: 2.6rem;
+    border-radius: 3px
+}
+
+.mainFormSearch .formControl:focus {
+    background-color: #fff;
+    border-color: #b4bdce;
+    box-shadow: none !important
+}
+
+.mainFormSearch .formControl:focus + .btn, .mainFormSearch .spContainer .formControl:focus + button, .spContainer .mainFormSearch .formControl:focus + button {
+    color: #a8afc7
+}
+
+.mainFormSearch .btn, .mainFormSearch .spContainer button, .spContainer .mainFormSearch button {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    height: 40px;
+    color: #b4bdce;
+    transition: none;
+    font-size: 16px;
+    padding-left: 16px
+}
+
+.spContainer .mainFormSearch button {
+    background-color: transparent
+}
+
+.mainFormSearch .btn:focus, .mainFormSearch .btn:hover, .mainFormSearch .spContainer button:focus, .mainFormSearch .spContainer button:hover, .spContainer .mainFormSearch button:focus, .spContainer .mainFormSearch button:hover {
+    color: #8f9cc0
+}
+.dropdownMenu .mainHeaderCenter .formControl {
+    background: #eaebfa;
+    border: 1px solid #e6eaff;
+    transition: none;
+    height: 40px;
+    border-radius: 0
+}
+
+.mainProfileMenu {
+    position: relative;
+    padding: .5rem 0;
+    margin: 0 4px
+}
+
+.mainProfileMenu > .mainImgUser {
+    outline: none;
+    width: 32px;
+    height: 32px
+}
+
+.mainProfileMenu > .mainImgUser:after {
+    display: none
+}
+
+.mainProfileMenu .dropdownMenu {
+    padding-top: 0;
+    position: absolute;
+    top: 53px;
+    right: auto;
+    left: -10px;
+    bottom: auto;
+    width: 230px;
+    border: 0;
+    border-width: 1px;
+    box-shadow: -8px 12px 18px 0 rgba(21, 21, 62, .3)
+}
+
+.mainProfileMenu .dropdownItem {
+    position: relative;
+    padding: 10px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    color: #3c4858
+}
+
+.mainProfileMenu .dropdownItem i {
+    font-size: 16px;
+    margin-left: 10px;
+    width: 24px;
+    text-align: center;
+    line-height: .9
+}
+
+.mainProfileMenu .dropdownItem:focus, .mainProfileMenu .dropdownItem:hover {
+    background-color: transparent
+}
+
+.mainProfileMenu .dropdownItem + .dropdownItem {
+    border-top: 1px solid #e8e8f7
+}
+
+.mainProfileMenu.show .dropdownMenu, .mainProfileMenu.show .mainImgUser:before {
+    display: block
+}
+
+
+.fadein, .headerSearch.show .dropdownMenu, .mainHeaderMessage.show .dropdownMenu, .mainHeaderNotification.show .dropdownMenu, .mainProfileMenu.show .dropdownMenu {
+    -webkit-animation-name: fadein;
+    animation-name: fadein;
+    -webkit-animation-duration: .2s;
+    animation-duration: .2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both
+}
+
+.mainNotificationText .badge {
+    line-height: 1.5
+}
+
+.mainHeaderMessage .dropdownFooter {
+    text-align: center;
+    padding: 10px;
+    font-size: 13px;
+    border-top: 1px solid rgba(123, 65, 216, .1)
+}
+.borderTop{
+    border-top: 1px solid #e8e8f7 !important
+}
+.proIcon{
+    font-size: 16px;
+    margin-left: 10px;
+    width: 24px;
+    text-align: center;
+    line-height: .9;
+}
+.headerNavheading {
+    padding: 15px 20px 20px;
+    text-align: center
+}
+
+.dropdownFooterMainHeaderNotification {
+    text-align: center;
+    padding: 10px;
+    font-size: 13px;
+    border-top: 1px solid rgba(123, 65, 216, .1)
+}
+
+.mainNotificationText {
+    font-size: 13px;
+    margin-top: .5rem;
+    margin-bottom: 1rem;
+    color: #3c4858
+}
+/* .drpdownMenu{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 1000;
+    display: none;
+    float: right;
+    min-width: 10rem;
+    padding: .5rem 0;
+    margin: .125rem 0 0;
+    font-size: .875rem;
+    color: #8f9cc0;
+    text-align: right;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #fff;
+    border-radius: 0;
+    box-shadow: -8px 12px 18px 0 rgba(21, 21, 62, .3)
+
+} */
+.mainNotificationList, .mainProfileMenu .dropdownMenu .dropdownItem:first-child {
+    border-top: 1px solid #e8e8f7
+}
+
+.mainNotificationList .media {
+    padding: 10px;
+    position: relative
+}
+
+.mainNotificationList .media + .media {
+    border-top: 1px solid rgba(123, 65, 216, .1)
+}
+
+.mainNotificationList .media.new {
+    color: #8f9cc0
+}
+
+.mainNotificationList .media:focus, .mainNotificationList .media:hover {
+    cursor: pointer;
+    z-index: 1
+}
+
+.mainNotificationList .media:focus:before, .mainNotificationList .media:hover:before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    bottom: -1px;
+    right: 0;
+    background-color: #f1f2f9;
+    border-top: 1px solid #e8e8f7;
+    border-bottom: 1px solid #e8e8f7;
+    z-index: -1
+}
+
+.mainNotificationList .mediaBody {
+    margin-right: 15px;
+    font-size: 13px
+}
+
+.mainNotificationList .mediaBody p {
+    margin-bottom: 5px;
+    line-height: 1.3;
+    color: #444469
+}
+
+.mainNotificationList .mediaBody strong {
+    font-weight: 500
+}
+
+.mainNotificationList .mediaBody span {
+    display: block;
+    font-size: 11px;
+    color: #a8afc7
+}
+
+
+
+.mainHeaderMessage.show .dropdownMenu:before, .mainHeaderNotification.show .dropdownMenu:before, .mainProfileMenu.show .dropdownMenu:before {
+    content: "";
+    width: 13px;
+    height: 13px;
+    background: #fff;
+    position: absolute;
+    top: -7px;
+    left: 28px;
+    transform: rotate(45deg);
+    border-top: 1px solid #f0f2f8;
+    border-left: 1px solid #f0f2f8
+}
+
+.mainHeaderNotification .dropdownMenu {
+    width: 300px;
+    position: absolute;
+    top: 48px;
+    right: auto;
+    left: -10px;
+    bottom: auto;
+    padding: 0;
+    border: 0;
+    border-width: 1px;
+    box-shadow: -8px 12px 18px 0 rgba(21, 21, 62, .3);
+    border-radius: 4px
+}
+
+.mainHeaderNotification.show .dropdownMenu:before{
+    content: "";
+    width: 13px;
+    height: 13px;
+    background: #fff;
+    position: absolute;
+    top: -7px;
+    left: 28px;
+    transform: rotate(45deg);
+    border-top: 1px solid #f0f2f8;
+    border-left: 1px solid #f0f2f8
+}
+.headerSearch.show .dropdownMenu:before {
+    content: "";
+    width: 13px;
+    height: 13px;
+    background: #fff;
+    position: absolute;
+    top: -7px;
+    right: 28px;
+    transform: rotate(45deg);
+    border-top: 1px solid #f0f2f8;
+    border-left: 1px solid #f0f2f8
+}
+
+.headerSearch .dropdownMenu {
+    width: 400px;
+    position: absolute;
+    top: 50px;
+    left: auto;
+    right: -10px;
+    bottom: auto;
+    padding: 0;
+    border-color: #f0f2f8;
+    border-width: 1px;
+    box-shadow: 0 8px 16px 0 rgba(162, 169, 204, .24)
+}
+
+.mainHeaderRight .btnSocial {
+    padding: 0;
+    justify-content: center;
+    color: #a8afc7;
+    border-radius: 3px;
+    transition: all .2s ease-in-out
+}
+
+.mainHeaderRight .btnSocial:focus, .mainHeaderRight .btnSocial:hover {
+    color: #3c4858
+}
+
+.mainHeaderRight .btnSocial i {
+    font-size: 18px;
+    line-height: 0
+}
+
+.mainHeaderRight .btnSocial + .btnSocial {
+    margin-left: 10px
+}
+
+.mainHeaderRight .btnBuy {
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: .5px;
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+    transition: all .2s ease-in-out;
+    margin-left: 20px
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mainHeaderRight .btnSocial {
+        transition: none
+    }
+}
