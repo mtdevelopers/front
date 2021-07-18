@@ -1,5 +1,5 @@
 import axios from "../../../axios";
-import * as actionCreators from "../index";
+import {set_error} from "../uiActions";
 
 export const GET_City_LIST = "GET_City_LIST";
 export const FETCH_SUCCESS_CITY = "FETCH_SUCCESS_CITY";
@@ -21,8 +21,7 @@ return (dispatch) => {
             dispatch(fetch_success_city(response.data.data));
         })
         .catch((error) => {
-            console.log(error.reponse);
-            // dispatch(actionCreators.fetch_fail(error.response));
+            dispatch(set_error(error.response.data));
         });
     };
 

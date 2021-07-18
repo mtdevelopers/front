@@ -19,23 +19,16 @@ const ListData = (props) => {
         e.preventDefault();
         if(props.listIdentifier === "country"){
             if(searchinput === ""){
-                props.showError("فیلد جستجو خالی است!")
+                props.showError({message:"فیلد جستجو خالی است!"});
             }else{
                 props.searchCountry(searchinput);
                 setSearchinput("");
             }
         }else if(props.listIdentifier === "state"){
             if(searchinput === ""){
-                props.showError("فیلد جستجو خالی است!")
+                props.showError({message:"فیلد جستجو خالی است!"});
             }else{
                 props.searchState(searchinput,props.searchId);
-                setSearchinput("");
-            }
-        }else if(props.listIdentifier === "city"){
-            if(searchinput === ""){
-                props.showError("فیلد جستجو خالی است!")
-            }else{
-                props.searchCity(searchinput,props.searchId);
                 setSearchinput("");
             }
         }
@@ -50,7 +43,7 @@ const ListData = (props) => {
         }else if(props.listIdentifier === "city"){
             props.deleteCity(id);
         }else{
-            props.showError("عملیات حذف با خطا مواجه شده است!")
+            props.showError({message:"عملیات حذف با خطا مواجه شده است!"});
         }
     }
     const updateHandler = (e,id,name) => {
@@ -62,7 +55,7 @@ const ListData = (props) => {
         }else if(props.listIdentifier === "city"){
             props.updateCity(id,name,props.activeStateDrop);
         }else{
-            props.showError("عملیات حذف با خطا مواجه شده است!")
+            props.showError({message:"عملیات حذف با خطا مواجه شده است!"});
         }
     }
 /////////////////////////////////////////////////////////////
@@ -114,7 +107,7 @@ const ListData = (props) => {
                 <div className="table-responsive">
                     <div className="d-flex justify-content-between pt-2">
                         <h6 className="main-content-label pl-2 pt-2">{props.searchTitle}</h6>
-                        <button className="btn btn-primary" onClick={refreshList}><BiRefresh /></button>
+                        <button className="btn btn-secondary" onClick={refreshList}><BiRefresh /></button>
                         
                     </div>
                     <table id="example3" className="table table-striped table-bordered text-nowrap">
@@ -169,7 +162,8 @@ const mapStateToProps = (state) => {
     return{
         name:state.country.name,
         error:state.country.error,
-        searchId:state.country.searchId
+        searchId:state.country.searchId,
+        parentId:state.country.parentId
         
     }
 }
@@ -187,7 +181,7 @@ const mapDispatchToProps = (dispatch) => {
         updateCountry : (id,name) => dispatch(actionCreators.update_country(id,name)),
         updateState : (id,name,parent) => dispatch(actionCreators.update_state(id,name,parent)),
         updateCity : (id,name,parent) => dispatch(actionCreators.update_city(id,name,parent)),
-        showError : (msg) => dispatch(actionCreators.show_alert(msg)),
+        showError : (msg) => dispatch(actionCreators.set_error(msg)),
         searchCountry : (name) => dispatch(actionCreators.search_country(name)),
         searchState : (name,id) => dispatch(actionCreators.search_state(name,id)),
         searchCity : (name,id) => dispatch(actionCreators.search_city(name,id)),

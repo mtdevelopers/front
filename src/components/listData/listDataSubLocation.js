@@ -21,14 +21,7 @@ const ListData = (props) => {
             if(searchinput === ""){
                 props.showError("فیلد جستجو خالی است!")
             }else{
-                props.searchState(searchinput,props.searchId);
-                setSearchinput("");
-            }
-        }else if(props.listIdentifier === "city"){
-            if(searchinput === ""){
-                props.showError("فیلد جستجو خالی است!")
-            }else{
-                props.searchCity(searchinput,props.searchId);
+                props.searchArea(searchinput,props.parentId);
                 setSearchinput("");
             }
         }
@@ -50,10 +43,6 @@ const ListData = (props) => {
         e.preventDefault();
         if(props.listIdentifier === "area"){
             props.updateArea(id,name);
-        }else if(props.listIdentifier === "state"){
-            props.updateState(id,name,props.activeCountryDrop);
-        }else if(props.listIdentifier === "city"){
-            props.updateCity(id,name,props.activeStateDrop);
         }else{
             props.showError("عملیات حذف با خطا مواجه شده است!")
         }
@@ -65,16 +54,8 @@ const ListData = (props) => {
             props.clearListArea();
             props.getAreaList();
         }
-        if(props.listIdentifier === "state"){
-            props.clearListState();
-            props.getStateList();
-        }
-        if(props.listIdentifier === "city"){
-            props.clearListCity();
-            props.getCityList();
-        }
     }
-
+    
     return(
         <div className="card custom-card">
             <div className="card-body pb-0">
@@ -84,8 +65,8 @@ const ListData = (props) => {
                         {props.dropBtn && 
                         <>
                             <h6 className="main-content-label pl-5 pt-2">فیلتر بر اساس</h6>
-                            {/* <SeachDrop className="pm-2" color="primary" identifier={props.listIdentifier} items={props.parentLocation}>
-                            </SeachDrop> */}
+                            <SeachDrop className="pm-2" color="primary" identifier={props.listIdentifier} items={props.parentLocation}>
+                            </SeachDrop>
                         </>
                         }
                     </div>
@@ -107,7 +88,7 @@ const ListData = (props) => {
                 <div className="table-responsive">
                     <div className="d-flex justify-content-between pt-2">
                         <h6 className="main-content-label pl-2 pt-2">{props.searchTitle}</h6>
-                        <button className="btn btn-primary" onClick={refreshList}><BiRefresh /></button>
+                        <button className="btn btn-secondary" onClick={refreshList}><BiRefresh /></button>
                         
                     </div>
                     <table id="example3" className="table table-striped table-bordered text-nowrap">
@@ -122,7 +103,8 @@ const ListData = (props) => {
                             {props.child.map(el => {
                                 let elementParentName = ""
                                 if(props.listIdentifier !== "country"){
-                                    // elementParentName = props.parentLocation.filter(item => item._id === el[props.parentName])[0];
+                                    
+                                    elementParentName = props.parentLocation.filter(item => item._id === el[props.parentName])[0];
                                     if(elementParentName){
                                         elementParentName = elementParentName.name;
                                     }else{
@@ -162,7 +144,10 @@ const mapStateToProps = (state) => {
     return{
         name:state.country.name,
         error:state.country.error,
-        searchId:state.country.searchId
+        searchId:state.subLocation.searchId,
+        parentId:state.subLocation.parentId,
+        parent:state.country.parentId
+
         
     }
 }
@@ -176,8 +161,7 @@ const mapDispatchToProps = (dispatch) => {
 
         updateArea : (id,name) => dispatch(actionCreators.update_area(id,name)),
         
-        searchArea : (name) => dispatch(actionCreators.search_area(name)),
-        
+        searchArea : (name,id) => dispatch(actionCreators.search_area(name,id)),
         
         showError : (msg) => dispatch(actionCreators.show_alert(msg)),
     }

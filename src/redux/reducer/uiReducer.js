@@ -13,7 +13,9 @@ const reducer = (state = initialState, action) => {
       case actionTypes.SET_IS_LOADING:
         return {...state,isLoading:!state.isLoading}
       case actionTypes.SET_ERROR:
-        return {...state, error:!state.error, errorBody:action.error}
+        return {...state, error:true, errorBody:action.error.message}
+      case actionTypes.HIDE_ERROR:
+        return {...state, error:false}
       case actionTypes.SHOW_SIDEBAR:
         return {...state,sidebar:!state.sidebar}
       default: {

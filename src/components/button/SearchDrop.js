@@ -7,16 +7,23 @@ const DropwdownButton = (props) => {
   const [dropdownOpen, setOpen] = useState(false);
 
   const toggle = () => setOpen(!dropdownOpen);
-  const selectHandler = (e,id) => {
+  const selectHandler = (e,id,name) => {
     e.preventDefault();
     props.setSearchId(id);
+    if(props.identifier === "state"){
+      props.setParentCountryId(id,name);
+    }else if(props.identifier === "city"){
+      props.setParentStateId(id,name);
+    }else if(props.identifier === "area"){
+      props.setParentCityId(id,name);
+    }
   }
   return (
     <ButtonDropdown className="w-100" isOpen={dropdownOpen} toggle={toggle}>
-      <Button className="btn-width" id="caret" color={props.color}>{props.identifier === "state" ? props.activeCountryDrop : props.activeStateDrop}</Button>
+      <Button className="btn-width" id="caret" color={props.color}>{props.identifier === "state" ? props.activeCountryDrop : props.identifier === "city" ? props.activeStateDrop : props.activeCityDrop}</Button>
       <DropdownToggle split color={props.color} />
       <DropdownMenu>
-        {props.items.map((item) =>  <DropdownItem onClick={(event) => selectHandler(event,item._id)} key={item._id}>{item.name}</DropdownItem>
+        {props.items.map((item) =>  <DropdownItem onClick={(event) => selectHandler(event,item._id,item.name)} key={item._id}>{item.name}</DropdownItem>
         )}
       </DropdownMenu>
     </ButtonDropdown>
@@ -25,13 +32,17 @@ const DropwdownButton = (props) => {
 const mapStateToProps = (state) => {
   return{
     activeCountryDrop:state.country.activeCountryDrop,
-    activeStateDrop:state.country.activeStateDrop
+    activeStateDrop:state.country.activeStateDrop,
+    activeCityDrop:state.subLocation.activeCityDrop
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return{
     setSearchId : (id) => dispatch(actionCreators.set_search_id(id)),
+    setParentCountryId : (id,name) => dispatch(actionCreators.set_parent_country_id(id,name)),
+    setParentStateId : (id,name) => dispatch(actionCreators.set_parent_state_id(id,name)),
+    setParentCityId : (id,name) => dispatch(actionCreators.set_parent_city_id(id,name))
   }
 }
 

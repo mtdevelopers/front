@@ -22,9 +22,10 @@ const Sublocation = (props) => {
     ]
     
     useEffect(() => {
-    props.getAreaList();
-    props.getCityList();
-    },[])
+        props.getAreaList();
+        props.getCityList();
+    },[]);
+
     return(
         <>
             <Breadcrumb navArr={[{root:"setting",secondLevel:"sublocation",addr:"area",title:"منطقه" ,active:true},{root:"setting",secondLevel:"sublocation",addr:"branch",title:"شعبه"}]}/>
@@ -43,10 +44,10 @@ const mapStateToProps = (state) => {
     return{
     }
 }
-const mapDispatchToProps = (dispacth) => {
+const mapDispatchToProps = (dispatch) => {
     return{
-        getAreaList : () => dispacth(actionCreators.get_area_list()),
-        getCityList : () => dispacth(actionCreators.get_city_list_area()),
+        getAreaList : () => dispatch(actionCreators.get_area_list()),
+        getCityList : () => dispatch(actionCreators.get_city_list())
 
     }
 }

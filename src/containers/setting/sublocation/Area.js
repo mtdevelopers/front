@@ -1,4 +1,4 @@
-import CreateBox from "../../../components/settings/createbox/CreateBox";
+import CreateBox from "../../../components/settings/createbox/subCreatebox";
 import ListData from "../../../components/listData/listDataSubLocation";
 import {connect} from "react-redux";
 import { withRouter } from "react-router";
@@ -7,7 +7,7 @@ import { withRouter } from "react-router";
 
 const Area = (props) => {
     const listOfArea = props.listOfArea;
-    const listOfParentLocation = props.ListOfCity;
+    const listOfParentLocation = props.listOfCity;
 
     return(
         <>
@@ -16,7 +16,7 @@ const Area = (props) => {
                  <CreateBox listIdentifier="area" selectTitle="انتخاب شهر مربوطه" listOfParentLocation={listOfParentLocation} title={"ایجاد منطقه"} haveParent={true} parentLabel={"شهر مربوطه"}/>
             </div>
             <div className="col-lg-5">
-                <ListData listIdentifier="area" dropBtn={true} dropTitle={"شهر"} parentLocation={listOfParentLocation} searchTitle={"لیست مناطق"} title={{titleA:"عنوان منطقه",titleB:"شهر مربوطه"}} child={listOfArea}/>
+                <ListData parentName="city" listIdentifier="area" dropBtn={true} dropTitle={"شهر"} parentLocation={listOfParentLocation} searchTitle={"لیست مناطق"} title={{titleA:"عنوان منطقه",titleB:"شهر مربوطه"}} child={listOfArea}/>
             </div>   
         <div className="col-lg-3">
             <div className="card custom-card bg-warning">
@@ -32,8 +32,8 @@ const Area = (props) => {
 }
 const mapStateToProps = (state) => {
     return{
+        listOfCity:state.country.listOfCity,
         listOfArea:state.subLocation.listOfArea,
-        ListOfCity:state.subLocation.ListOfCity
     }
 }
 

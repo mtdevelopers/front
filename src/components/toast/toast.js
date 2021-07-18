@@ -51,7 +51,7 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return{
-        hideAlert: () => dispatch(actionCreators.hide_alert())
+        hideAlert: () => dispatch(actionCreators.hide_error())
     }
 }
 

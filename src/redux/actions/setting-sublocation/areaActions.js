@@ -6,8 +6,17 @@ export const FETCH_SUCCESS_AREA = "FETCH_SUCCESS_AREA";
 export const FAIL_FETCH = "FAIL_FETCH";
 export const CLEAR_LIST_AREA = "CLEAR_LIST_AREA";
 export const FETCH_CITY_SUCCESS = "FETCH_CITY_SUCCESS";
+export const SET_PARENT_CITY_ID = "SET_PARENT_CITY_ID";
+export const ADD_SUCCESS_AREA = "ADD_SUCCESS_AREA";
+export const DELETE_AREA_FROM_UI = "DELEETE_AREA_FROM_UI";
 
+export const ADD_SEARCH_ID = "ADD_SEARCH_ID";
 export const DELETE_SUCCCESS_AREA = "DELETE_SUCCESS_AREA";
+export const SHOW_SEARCH_RESULT = "SHOW_SEARCH_RESULT";
+
+
+
+
 
 const config = {
     headers: {
@@ -23,24 +32,18 @@ export const get_area_list = () => {
             dispatch(fetch_success_area(response.data.data));
           })
           .catch((error) => {
-            dispatch(fetch_fail(error.response.data));
+            dispatch(set_error(error.response.data));
           });
       };
 }
-export const get_city_list_area = () => {
-    return (dispatch) => {
-        axios
-          .get(`/city`)
-          .then((response) => {
-            dispatch(fetch_success_city(response.data.data));
-          })
-          .catch((error) => {
-            dispatch(fetch_fail(error.response.data));
-          });
-      };
-}
-export const create_area = (object) => {
 
+export const create_area = (object) => {
+    return (dispatch) => {
+        axios 
+            .post("/area",object,config)
+            .then(response => dispatch(add_success_area(response.data.data)))
+            .catch(error => dispatch(set_error(error.response.data)))
+    }
 }
 export const delete_area = (id) => {
     return (dispatch) => {
@@ -49,14 +52,52 @@ export const delete_area = (id) => {
             .catch(error => dispatch(set_error(error.response.data)))
     }
 }
-export const search_area = (input) => {
 
+export const search_area = (name,id) => {
+    return (dispatch) => {
+        console.log(name,id)
+        axios.get(`/area?name=${name}&city=${id}`)
+            .then(response => {
+                if(response.data.data.length === 0 ){
+                    dispatch(set_error({message:"یافت نشد!"}))
+                }else{
+                    dispatch(show_search_result(response.data.data))
+                }
+            })
+            .catch(error => dispatch(set_error(error.response.data)))
+    }
 }
-export const update_area = () => {
-
+export const update_area = (id,name) => {
+    return {
+        type:DELETE_AREA_FROM_UI,
+        id,
+        name
+    }
 }
-export const update_area_permanent = () => {
-
+export const show_search_result = (data) => {
+    return{
+        type:SHOW_SEARCH_RESULT,
+        data
+    }
+}
+export const update_area_permanent = (object,id) => {
+    return (dispatch) => {
+        axios.patch(`/area/${id}`,object,config)
+            .then(response => dispatch(add_success_area(response.data.data)))
+            .catch(error => dispatch(set_error(error.response.data)))
+    }
+}
+export const set_search_id_area = (id) => {
+    return{
+        type:ADD_SEARCH_ID,
+        id
+    }
+}
+export const add_success_area = (data) => {
+    return{
+        type:ADD_SUCCESS_AREA,
+        data
+    }
 }
 export const fetch_success_area = (data) => {
     return{
@@ -70,12 +111,7 @@ export const fetch_success_city = (data) => {
         data
     }
 }
-export const fetch_fail = (data) => {
-    return{
-        type:FAIL_FETCH,
-        data
-    }
-}
+
 export const clear_list_area = () => {
     return{
         type:CLEAR_LIST_AREA

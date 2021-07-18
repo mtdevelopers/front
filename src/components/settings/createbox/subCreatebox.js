@@ -3,6 +3,7 @@ import {IoCreateOutline} from "react-icons/io5";
 import * as actionCreators  from "../../../redux/actions/index";
 import {connect} from "react-redux";
 import DropwdownButton from "../../button/createDorpButton";
+import SelectBtn from "../../button/SelectBtn";
 
 const CreateBox = (props) => {
     const [nameinput,setNameinput] = useState("");
@@ -20,50 +21,14 @@ const CreateBox = (props) => {
         e.preventDefault();
         if(nameinput === "" || nameinput === null){
             props.set_error({message:"نام خالی است!"})
-        }else if(props.listIdentifier === "country"){
-            const country = {name:nameinput}
-            if(props.name){
-                props.updateCountry(country,props.id);
-                setNameinput("");
-            }else{
-
-                props.createCountry(country);
-                setNameinput("");
-            }
-        }else if(props.listIdentifier === "state"){
-            const state = {name:nameinput,country:props.parentIdentifier}
-            if(props.parentIdentifier === null){
-                props.set_error({message:"کشور انتخاب نشده است!"});
-            }else{
-                if(props.name){
-                    props.updateState(state,props.id);
-                    setNameinput("");
-                }else{
-                    props.createState(state);
-                    setNameinput("");
-                }
-            }
-            
-        }else if(props.listIdentifier === "city"){
-            const city = {name:nameinput,state:props.parentIdentifier};
-            if(props.parentIdentifier === null){
-                props.set_error({message:"استان انتخاب نشده است!"});
-            }else{
-                if(props.name){
-                    props.updateCity(city,props.id);
-                    setNameinput("");
-                }else{
-                    props.createCity(city);
-                    setNameinput("");
-                }
-            }
         }else if(props.listIdentifier === "area"){
             const area = {name:nameinput,city:props.parentIdentifier};
             if(props.parentIdentifier === null){
                 props.set_error({message:"شهر انتخاب نشده است!"});
             }else{
                 if(props.name){
-                    props.updateCity(area,props.id);
+                    console.log(area,props.id)
+                    props.updateArea(area,props.id);
                     setNameinput("");
                 }else{
                     props.createArea(area);
@@ -73,6 +38,7 @@ const CreateBox = (props) => {
         }
         
     }
+    console.log(props.name)
     return(
         <div className="card custom-card">
                 
@@ -95,7 +61,7 @@ const CreateBox = (props) => {
                         
                     </div>
                     <div className="d-flex flex-row justify-content-end">
-                        <button className="btn ripple btn-success btn-with-icon w-50 mt-5" onClick={submitHandler} >{props.name || props.subName ? "ویرایش" : "ثبت" }<span className="mr-2"><IoCreateOutline /></span></button>
+                        <button className="btn ripple btn-success btn-with-icon w-50 mt-5" onClick={submitHandler} >{props.name  ? "ویرایش" : "ثبت" }<span className="mr-2"><IoCreateOutline /></span></button>
                     </div>
                 </div> 
             </div>
@@ -106,26 +72,18 @@ const CreateBox = (props) => {
 
 const mapStateToProps = (state) => {
     return{
-        token:state.auth.token,
-        name:state.country.name,
-        id:state.country.id,
-        error:state.country.error,
-        errorBody:state.country.errorBody,
-        success:state.country.success,
-        alertBody:state.country.alertBody,
+        name:state.subLocation.name,
+        id:state.subLocation.id,
         parentIdentifier:state.country.parentId,
     }
 }
 const mapDispatchToProps = (dispatch) => {
     return{
-        createCountry : (obj) => dispatch(actionCreators.create_country(obj)),
-        createState : (obj) => dispatch(actionCreators.create_state(obj)),
-        createCity : (obj) => dispatch(actionCreators.create_city(obj)),
+        
         createArea : (obj) => dispatch(actionCreators.create_area(obj)),
         set_error : (msg) => dispatch(actionCreators.set_error(msg)),
-        updateCountry: (name,id) => dispatch(actionCreators.update_country_permanent(name,id)),
-        updateState: (name,id) => dispatch(actionCreators.update_state_permanent(name,id)),
-        updateCity: (name,id) => dispatch(actionCreators.update_city_permanent(name,id)),
+        
+        updateArea: (object,id) => dispatch(actionCreators.update_area_permanent(object,id)),
 
 
     }

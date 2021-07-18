@@ -1,5 +1,5 @@
 import axios from "../../axios";
-
+import {set_error} from "../actions/uiActions";
 
 export const CREATE_COUNTRY = "CREATE_COUNTRY";
 export const CREATE_STATE = "CREATE_STATE";
@@ -20,7 +20,6 @@ export const ADD_SUCCESS_CITY = "ADD_SUCCESS_CITY";
 
 
 export const FETCH_FAIL = "FETCH_FAIL";
-export const HIDE_ALERT = "HIDE_ALERT";
 export const SHOW_ALERT = "SHOW_ALERT";
 
 export const SHOW_RESULT_COUNTRY = "SHOW_RESULT_COUNTRY";
@@ -48,6 +47,7 @@ export const UPDATE_COUNTRY = "UPDATE_COUNTRY";
 
 export const SET_PARENT_COUNTRY_ID = "SET_PARENT_COUNTRY_ID";
 export const SET_PARENT_STATE_ID = "SET_PARENT_STATE_ID";
+export const SET_PARENT_CITY_ID = "SET_PARENT_CITY_ID";
 
 export const SET_SEARCH_ID = "SET_SEARCH_ID";
 
@@ -66,7 +66,7 @@ export const get_country_list = () => {
             dispatch(fetch_success_country(response.data.data));
           })
           .catch((error) => {
-            dispatch(fetch_fail(error.response.data));
+            dispatch(set_error(error.response.data));
           });
       };
 }
@@ -81,7 +81,7 @@ export const create_country = (name) => {
               dispatch(add_success_country(response.data.data))
           })
           .catch((error) => {
-            dispatch(fetch_fail(error.response.data));
+            dispatch(set_error(error.response.data));
           });
       };
 }
@@ -96,7 +96,7 @@ export const create_state = (name) => {
             dispatch(add_success_state(response.data.data))
         })
         .catch((error) => {
-          dispatch(fetch_fail(error.response.data));
+          dispatch(set_error(error.response.data));
         });
     };
 }
@@ -110,7 +110,7 @@ export const create_city = (name) => {
             dispatch(add_success_city(response.data.data))
         })
         .catch((error) => {
-          dispatch(fetch_fail(error.response.data));
+          dispatch(set_error(error.response.data));
         });
     };
 }
@@ -123,7 +123,7 @@ export const delete_country = (id) => {
           dispatch(delete_country_success(id))
         })
         .catch(error => {
-          dispatch(fetch_fail(error.response.data))
+          dispatch(set_error(error.response.data))
           }
         )
   }
@@ -143,7 +143,7 @@ export const delete_state = (id) => {
           dispatch(delete_state_success(id))
         })
         .catch(error => {
-          dispatch(fetch_fail(error.response.data))
+          dispatch(set_error(error.response.data))
           }
         )
   }
@@ -163,7 +163,7 @@ export const delete_city = (id) => {
           dispatch(delete_city_success(id))
         })
         .catch(error => {
-          dispatch(fetch_fail(error.response.data))
+          dispatch(set_error(error.response.data))
           }
         )
   }
@@ -180,26 +180,27 @@ export const update_country_permanent = (name,id) => {
   return (dispatch) => {
     axios.patch(`/country/${id}`,name,config)
           .then(response => dispatch(update_country_success(response.data.data)))
-          .catch(error => dispatch(fetch_fail(error.message.data)))
+          .catch(error => dispatch(set_error(error.message.data)))
   }
 }
 export const update_state_permanent = (name,id) => {
   return (dispatch) => {
     axios.patch(`/state/${id}`,name,config)
           .then(response => dispatch(update_state_success(response.data.data)))
-          .catch(error => dispatch(fetch_fail(error.message.data)))
+          .catch(error => dispatch(set_error(error.message.data)))
   }
 }
 export const update_city_permanent = (name,id) => {
   return (dispatch) => {
     axios.patch(`/city/${id}`,name,config)
           .then(response => dispatch(update_city_success(response.data.data)))
-          .catch(error => dispatch(fetch_fail(error.message.data)))
+          .catch(error => dispatch(set_error(error.message.data)))
   }
 }
 ///////////////////////////////////////////////////////////////////////////
 // search country
 export const search_country = (name) => {
+  console.log("start search")
   return (dispatch) => {
     axios.get(`/country?name=${name}`)
         .then(response => {
@@ -209,7 +210,7 @@ export const search_country = (name) => {
             dispatch(show_search_country(response.data.data))
           }
         })
-        .catch(error => dispatch(fetch_fail(error.response.data)))
+        .catch(error => dispatch(set_error(error.response.data)))
   }
 }
 /// search state
@@ -223,7 +224,7 @@ export const search_state = (name,country) => {
             dispatch(show_search_state(response.data.data))
           }
         })
-        .catch(error => dispatch(fetch_fail(error.response.data)))
+        .catch(error => dispatch(set_error(error.response.data)))
   }
 }
 //search city
@@ -237,7 +238,7 @@ export const search_city = (name,state) => {
             dispatch(show_search_city(response.data.data))
           }
         })
-        .catch(error => dispatch(fetch_fail(error.response.data)))
+        .catch(error => dispatch(set_error(error.response.data)))
   }
 }
 /////////////////////////////////////////////////////////////////////////
@@ -357,17 +358,8 @@ export const fetch_success_city = (data) => {
     data
   }
 }
-export const fetch_fail = (error) => {
-    return{
-      type:FETCH_FAIL,
-      error
-    }
-}
-export const hide_alert = () => {
-  return{
-    type:HIDE_ALERT
-  }
-}
+
+
 export const show_alert = (msg) => {
   return{
     type:SHOW_ALERT,
@@ -387,6 +379,14 @@ export const set_parent_state_id = (id,name) => {
 
   return{
     type:SET_PARENT_STATE_ID,
+    id,
+    name
+  }
+}
+export const set_parent_city_id = (id,name) => {
+
+  return{
+    type:SET_PARENT_CITY_ID,
     id,
     name
   }

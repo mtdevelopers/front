@@ -38,9 +38,9 @@ const routes = [
 
 const Location = (props) => {
     useEffect(() => {
-    props.getCountryList();
-    props.getStateList();
-    props.getCityList();
+        props.getCountryList();
+        props.getStateList();
+        props.getCityList();
     },[])
 
     return(
