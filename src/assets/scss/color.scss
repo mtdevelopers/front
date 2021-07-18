@@ -126,9 +126,9 @@ body {
 	background: #6259ca;
 }
 .btn-primary {
-	background-color: #6259ca;
-	color: #fff;
-	border-color: #6259ca;
+	background-color: #6259ca !important;
+	color: #fff !important;
+	border-color: #6259ca !important;
 	&:hover {
 		color: #fff;
 		background-color: #403fad;
@@ -218,7 +218,7 @@ body {
 }
 .btn-main-primary {
 	color: #fff;
-	background-color: #6259ca;
+	background-color: #6259ca !important;
 	border-color: #6259ca;
 	&:hover {
 		color: #fff;
@@ -943,7 +943,7 @@ pre {
 }
 .flat {
 	a.active {
-		background: #6259ca;
+		background: #6259ca !important;
 		color: #fff;
 		&:after {
 			background: #6259ca;
@@ -952,7 +952,7 @@ pre {
 	}
 	a {
 		&:hover {
-			background: #6259ca;
+			background: #6259ca !important;
 			color: #fff;
 			&:after {
 				background: #6259ca;

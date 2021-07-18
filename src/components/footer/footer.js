@@ -4,11 +4,11 @@
 const Footer = () => {
     return(
         <>
-            <div class="main-footer text-center">
-                <div class="container">
-                    <div class="row row-sm">
-                        <div class="col-md-12">
-                            <span>کپی رایت © 1399  . طراحی شده توسط <a href="#">Themefix</a> کلیه حقوق محفوظ است.</span>
+            <div className="main-footer text-center">
+                <div className="container">
+                    <div className="row row-sm">
+                        <div className="col-md-12">
+                            <span> کلیه حقوق این سایت متعلق به <a href="https://melketabriz.com">سامانه تخصصی ملک تبریز </a>می باشد.</span>
                         </div>
                     </div>
                 </div>

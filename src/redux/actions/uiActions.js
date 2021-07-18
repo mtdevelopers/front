@@ -1,6 +1,8 @@
 export const SET_IS_LOADING = "SET_IS_LOADING";
 export const SET_ERROR = "SET_ERROR";
 export const SHOW_SIDEBAR = "SHOW_SIDEBAR";
+export const SET_SUCCESS = "SET_SUCCESS";
+
 
 export const set_is_loading = () => {
     return {
@@ -13,6 +15,12 @@ export const set_error = (error) => {
     error
   };
 };
+export const set_success = (success) => {
+  return{
+    type:SET_SUCCESS,
+    success
+  }
+} 
 export const show_sidebar = () => {
   return {
     type: SHOW_SIDEBAR,

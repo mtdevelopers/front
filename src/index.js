@@ -6,6 +6,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import uiReducer from "./redux/reducer/uiReducer";
+import sidemenuReducer from "./redux/reducer/sidemenuReducer";
+import authReducer from "./redux/reducer/authReducer";
+import countryReducer from "./redux/reducer/setting-location/countryReducer";
+import locationReducer from "./redux/reducer/setting-location/locationReducer";
+import subLocationReducer from "./redux/reducer/setting-sublocation/sublocationReducer";
 import { createStore, combineReducers, compose,applyMiddleware } from "redux";
 import thunk from 'redux-thunk';
 
@@ -22,8 +27,12 @@ const logger = (store) => {
 
 //combining REDUCERS
 const rootReducer = combineReducers({
-  
-  ui:uiReducer
+  sidemenu:sidemenuReducer,
+  ui:uiReducer,
+  auth:authReducer,
+  location:locationReducer,
+  country:countryReducer,
+  subLocation:subLocationReducer
 });
 
 //CREATE STORE

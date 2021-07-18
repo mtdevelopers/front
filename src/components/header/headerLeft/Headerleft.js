@@ -9,16 +9,19 @@ import {FiSettings} from "react-icons/fi";
 import {BiCompass} from "react-icons/bi";
 import {BsPower} from "react-icons/bs";
 import {AiOutlineOrderedList} from "react-icons/ai";
-import ReactCountryFlag from "react-country-flag";
 import Iranflag from "../../../assets/img/flags/french_flag.jpg";
 import soniaImg from "../../../assets/img/users/1.jpg";
 import {AiOutlineAlignRight} from "react-icons/ai";
 import meesage1 from "../../../assets/img/users/5.jpg";
 import meesage2 from "../../../assets/img/users/4.jpg";
 import meesage3 from "../../../assets/img/users/3.jpg";
+import {Link} from "react-router-dom";
+import { Redirect } from "react-router";
+import { connect } from "react-redux";
+import * as actionCreators from "../../../redux/actions/index";
 
 
-const Headerleft = () => {
+const Headerleft = (props) => {
     const [profileshow,setProfileshow] = useState(true);
     const [notificationshow,setNotificationShow] = useState(true);
     const profileShowHandler = (e) => {
@@ -31,7 +34,6 @@ const Headerleft = () => {
         setNotificationShow(!notificationshow);
 		
     }
-
     return(
         <div className="main-header-right">
 				<div className="dropdown header-search">
@@ -117,28 +119,28 @@ const Headerleft = () => {
 					</a>
 					<div className="dropdown-menu">
 						<div className="header-navheading">
-						<h6 className="main-notification-title">سونیا تیلور</h6>
+						<h6 className="main-notification-title"></h6>
 						<p className="main-notification-text">طراح وب</p>
 						</div>
 						<a className="dropdown-item border-top" href="profile.html">
-							<span classNameName="i"><AiOutlineUser /></span>  پروفایل من
+							<span className="i"><AiOutlineUser /></span>  پروفایل من
 						</a>
 						<a className="dropdown-item" href="profile.html">
-							<span classNameName="i"><FiEdit /></span>  ویرایش نمایه
+							<span className="i"><FiEdit /></span>  ویرایش نمایه
 						</a>
 						<a className="dropdown-item" href="profile.html">
-							<span classNameName="i"><FiSettings /></span> 
+							<span className="i"><FiSettings /></span> 
 							تنظیمات حساب
 						</a>
 						<a className="dropdown-item" href="profile.html">
-							<span classNameName="i"><AiOutlineOrderedList /></span>  پشتیبانی
+							<span className="i"><AiOutlineOrderedList /></span>  پشتیبانی
 						</a>
 						<a className="dropdown-item" href="profile.html">
-							<span classNameName="i"><BiCompass /></span>  فعالیت
+							<span className="i"><BiCompass /></span>  فعالیت
 						</a>
-						<a className="dropdown-item" href="signin.html">
-							<span classNameName="i"><BsPower /></span>  خروج از سیستم
-						</a>
+						<Link className="dropdown-item" onClick={props.logout}>
+							<span className="i"><BsPower /></span>  خروج از سیستم
+						</Link>
 					</div>
 				</div>
 				<div className="dropdown d-md-flex header-settings">
@@ -152,5 +154,18 @@ const Headerleft = () => {
 			</div>
     )
 }
+const mapStateToProps = (state) => {
+	return{
+		user:state.auth,
+	}
+}
 
-export default Headerleft;
+const mapDispatchToProps = (dispatch) => {
+	return{
+		logout: () => dispatch(actionCreators.logout())
+	}
+}
+
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(Headerleft);

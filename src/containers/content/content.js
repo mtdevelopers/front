@@ -5,12 +5,12 @@ import "../../assets/scss/newStyle.scss";
 const Content = () => {
     return(
         <>
-        <div class="main-content side-content">
-            <div class="container-fluid">
-                <div class="inner-body">
+        <div className="main-content side-content">
+            <div className="container-fluid">
+                <div className="inner-body">
                     <ContentHeader />
-                    <div class="row row-sm">
-                        <SearchPanel />
+                    <div className="row row-sm">
+                        {/* <SearchPanel /> */}
 
                     </div>
                 </div>
